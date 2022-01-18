@@ -1,7 +1,7 @@
 
 
 
-![](process.png)
+![](Littil-Architecture-Overview.jpg)
 
 # Backlog
 
