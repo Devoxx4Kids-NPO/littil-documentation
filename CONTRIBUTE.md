@@ -37,9 +37,7 @@ The initial tech stack:
 
 - Java 17 (GraalVM)
 - Maven build system
-- Spring-boot
-- Spring-webflux: for reactive development
-- Spring-native: to deliver it as a native image
+- Quarkus
 - Delivered as a docker image created by the Spring-native build pack
 - Code-style: ...
 
