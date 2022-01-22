@@ -6,5 +6,5 @@ Each separate repository in the [Littil space](https://github.com/Devoxx4Kids-NP
 
 * [What is Littil?](https://littil.org/)
 * [Project setup](CONTRIBUTE.md)
-* [Conceptual and data model](model.md)
+* [Conceptual model and data model](model.md)
 
