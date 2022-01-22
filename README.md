@@ -1,5 +1,10 @@
 # littil-documentation
 
-[What is Littil](https://littil.org/)
+This repository contains all high-level documentation about the Littil platform.
 
-[Project setup](CONTRIBUTE.md)
+Each separate repository in the [Littil space](https://github.com/Devoxx4Kids-NPO) also contains more detailed technical documentation.
+
+* [What is Littil?](https://littil.org/)
+* [Project setup](CONTRIBUTE.md)
+* [Conceptual and data model](model.md)
+
