@@ -5,14 +5,14 @@ Consider the basic scenario of a school looking for a list of suitable and avail
 
 ## The teacher profile
 We can identify the following minimum properties
-    * unique identifier, typically an email address or a chose username
-    * First name and surname
-    * Email
-    * Postal code, possibly only the digits, not the letters. This is easiest for a geographical match.
-    * Country. At present littil is only active in the Netherlands, but this can change
-    * Date of last login/activity.
-    * Preferences: a selection of categories, or free text 
-    * Availability: days of the week.
+* unique identifier, typically an email address or a chose username
+* First name and surname
+* Email
+* Postal code, possibly only the digits, not the letters. This is easiest for a geographical match.
+* Country. At present littil is only active in the Netherlands, but this can change
+* Date of last login/activity.
+* Preferences: a selection of categories, or free text 
+* Availability: days of the week.
 
 
 
