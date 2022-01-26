@@ -11,7 +11,7 @@ We can identify the following minimum properties
 * Postal code, possibly only the digits, not the letters. This is easiest for a geographical match.
 * Country. At present littil is only active in the Netherlands, but this can change
 * Date of last login/activity.
-* Preferences: a selection of categories, or free text 
+* Preferences: for the time being this will be free text. Possibly later you can choose from a set of modules. 
 * Availability: days of the week.
 
 ## The school profile
