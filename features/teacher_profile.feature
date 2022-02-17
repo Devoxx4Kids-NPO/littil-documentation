@@ -1,7 +1,5 @@
 Feature: Management of the teacher profile
-
-  Background:
-    # This feature contains registration, updating and deletion of a user account for teachers, including all profile data
+  This feature contains registration, updating and deletion of a user account for teachers, including all profile data
 
   Scenario: A new user registers themselves on the platform
     Given user Iris is new to the platform
