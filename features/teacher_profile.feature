@@ -9,8 +9,7 @@ Feature: Management of the teacher profile
     And her surname as de Bruin
     And her email as iris.de.bruin@outlook.com
     And her password as superSecret
-    And again as superSecret
-    And her postcode as 5591
+    And her post code as 5591
     And her country as the Netherlands
     And indicates that she agrees with the privacy statement
     And she confirms the registration
@@ -20,9 +19,24 @@ Feature: Management of the teacher profile
 
 
   Scenario: A user updates their profile data
+    Given a user with email iris.de.bruin@outlook.com is known to the platform
+    When this user logs into the system
+    And indicates she wants to change her profile
+    Then she can update her first name and surname
+    And update her password
+    And update her post code
+    And she receives a confirmation that the changes have been made
+
 
 
   Scenario: A user deletes their account
+    Given a user with email iris.de.bruin@outlook.com is known to the platform
+    When this user logs into the system
+    And indicates that they want to delete their account
+    And confirm their decision
+    Then they receive email confirmation that the account has been deleted
+    And they can no longer log in
+
 
 
 
