@@ -18,6 +18,6 @@ Detailed documentation of features and scenarios can be found under [integration
 This uses the [karate Netty](https://karatelabs.github.io/karate/karate-netty/) framework. You run the server as follows:
 
 ```bash
-cd mockbackend/src/main/resources
+cd mockbackend
 ./run.sh
 ```
