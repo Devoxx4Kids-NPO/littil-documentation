@@ -8,9 +8,3 @@ Each separate repository in the [Littil space](https://github.com/Devoxx4Kids-NP
 * [Project setup](CONTRIBUTE.md)
 * [Conceptual model and data model](model.md)
 
-### Run Mock backend server
-
-```bash
-cd mockbackend/src/main/resources
-./run.sh
-```
