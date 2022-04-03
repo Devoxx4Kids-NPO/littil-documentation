@@ -9,6 +9,11 @@ Each separate repository in the [Littil space](https://github.com/Devoxx4Kids-NP
 * [Project setup](CONTRIBUTE.md)
 * [Conceptual model and data model](model.md)
 
+## Gherkin feature files 
+Detailed documentation of features and scenarios can be found under [integration/src/test/resources/org/littil/integration](./integration/src/test/resources/org/littil/integration).
+
+
+
 ## Running the mock backend server
 This uses the [karate Netty](https://karatelabs.github.io/karate/karate-netty/) framework. You run the server as follows:
 
