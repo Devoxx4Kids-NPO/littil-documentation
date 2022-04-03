@@ -4,17 +4,17 @@ Feature: Manage the lifecycle of a teacher profile
     * configure cors = true
     * configure responseDelay = 300
 
-  Scenario: methodIs('get') && pathMatches('/api/v1/teacher/{id}')
+  Scenario: methodIs('get') && pathMatches('/teacher/{id}')
     * def response = read('teacher.json')
 
-  Scenario: methodIs('get') && pathMatches('/api/v1/teacher')
+  Scenario: methodIs('get') && pathMatches('/teacher')
     * def response = 401
 
-  Scenario: methodIs('post') && pathMatches('/api/v1/teacher')
+  Scenario: methodIs('post') && pathMatches('/teacher')
     * def response = {'message': 'Teacher created'}
 
-  Scenario: methodIs('put') && pathMatches('/api/v1/teacher')
+  Scenario: methodIs('put') && pathMatches('/teacher')
     * def response = {'message': 'Teacher updated'}
 
-  Scenario: methodIs('delete') && pathMatches('/api/v1/teacher/{id}')
+  Scenario: methodIs('delete') && pathMatches('/teacher/{id}')
     * def response = {'message': 'Teacher deleted'}
