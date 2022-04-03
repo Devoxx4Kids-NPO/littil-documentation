@@ -1,6 +1,7 @@
 # littil-documentation
 
-This repository contains all high-level documentation about the Littil platform.
+This repository contains high-level documentation about the Littil platform, including a karate mock server implementation and 
+a set of end to end tests (based on cucumber) containing detailed, human-readable specifications. 
 
 Each separate repository in the [Littil space](https://github.com/Devoxx4Kids-NPO) also contains more detailed technical documentation.
 
@@ -8,7 +9,8 @@ Each separate repository in the [Littil space](https://github.com/Devoxx4Kids-NP
 * [Project setup](CONTRIBUTE.md)
 * [Conceptual model and data model](model.md)
 
-### Run Mock backend server
+## Running the mock backend server
+This uses the [karate Netty](https://karatelabs.github.io/karate/karate-netty/) framework. You run the server as follows:
 
 ```bash
 cd mockbackend/src/main/resources
