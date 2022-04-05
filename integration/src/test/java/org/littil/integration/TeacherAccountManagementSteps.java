@@ -13,7 +13,7 @@ import java.util.Set;
 import static org.assertj.core.api.Assertions.*;
 
 @Slf4j
-public class TeacherSteps implements En {
+public class TeacherAccountManagementSteps implements En {
 
     private UserState state;
     WebDriver webDriver;
@@ -32,7 +32,7 @@ public class TeacherSteps implements En {
         }
     }
 
-    public TeacherSteps(UserState scenarioState) {
+    public TeacherAccountManagementSteps(UserState scenarioState) {
         this.state = scenarioState;
 
         Given("^user (.*?) is new to the platform", (String name) -> {
@@ -52,15 +52,15 @@ public class TeacherSteps implements En {
         When("^their email as (.*?)$", (String email) -> {
 
         });
-        When("^their password as (.*?)$", (String pwd) -> {
+        When("^their password (?:as|to) (.*?)$", (String pwd) -> {
 
         });
-        When("^their post code as (\\d+)", (Integer int1) -> {
+        When("^their post code (?:as|to) (\\d+)", (Integer int1) -> {
 
         });
         When("^their country as (.*?)$", (String country) -> {
 
-            And("^their available days as (.*?)$", (String list) -> {
+            And("^their available days (?:as|to) (.*?)$", (String list) -> {
                 var uniqueDays = Set.of(StringUtils.split(list, ","));
                 for (String weekday : uniqueDays) {
                     switch (weekday.trim().toLowerCase()) {
@@ -79,7 +79,7 @@ public class TeacherSteps implements En {
                     }
                 }
             });
-            And("^their preferences as (.*?)$", (String preferences) -> {
+            And("^their profile text (?:as|to) (.*?)$", (String preferences) -> {
             });
 
         });
@@ -110,22 +110,17 @@ public class TeacherSteps implements En {
         And("^indicates they want to change their profile", () -> {
 
         });
-        Then("^they can update their first name to (.*?) and surname to (.*?)", (String firstName, String surname) -> {
+        Then("^they can update their first name to (.*?) and surname to (.*?)$", (String firstName, String surname) -> {
 
         });
-        And("update their password to (.*?)$", (String newPwd) -> {
 
-        });
-        And("update their post code to (\\d+)$", (String newPostcode) -> {
-
-        });
         And("^they receive a confirmation that the changes have been made", () -> {
 
         });
         And("^indicates that they want to delete their account", () -> {
 
         });
-        And("^confirms their decision", () -> {
+        And("^confirms their decision to delete", () -> {
 
         });
         And("^they receive email confirmation that the account has been deleted", () -> {
@@ -133,6 +128,15 @@ public class TeacherSteps implements En {
         });
         And("^they can no longer log in", () -> {
             String currentUser = state.getCurrentUser();
+        });
+        Then("^their account details are updated$", () -> {
+        });
+
+        And("^indicates they want to change their email$", () -> {
+        });
+        Then("^they can update their email to (.*?)$", (String email) -> {
+        });
+        And("^they receive an email at (.*?) confirming the change$", (String email) -> {
         });
 
     }
