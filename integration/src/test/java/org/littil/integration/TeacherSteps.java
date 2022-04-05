@@ -1,10 +1,14 @@
 package org.littil.integration;
 
+import com.google.common.collect.Sets;
 import io.cucumber.java8.En;
 import io.cucumber.java8.Scenario;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebDriver;
+
+import java.util.Set;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -56,17 +60,39 @@ public class TeacherSteps implements En {
         });
         When("^their country as (.*?)$", (String country) -> {
 
-        });
-        When("^indicates that (?:he|she) agrees with the privacy statement", () -> {
+            And("^their available days as (.*?)$", (String list) -> {
+                var uniqueDays = Set.of(StringUtils.split(list, ","));
+                for (String weekday : uniqueDays) {
+                    switch (weekday.trim().toLowerCase()) {
+                        case "monday":
+                            break;
+                        case "tuesday":
+                            break;
+                        case "wednesday":
+                            break;
+                        case "thursday":
+                            break;
+                        case "friday":
+                            break;
+                        default:
+                            throw new IllegalStateException("Unknown day of the week: " + weekday);
+                    }
+                }
+            });
+            And("^their preferences as (.*?)$", (String preferences) -> {
+            });
 
         });
-        When("^(?:he|she) confirms the registration", () -> {
+        When("^indicates that they agree with the privacy statement", () -> {
+
+        });
+        When("^they confirm the registration", () -> {
 
         });
         Then("^they receive an email at (.*?) asking to activate their account", (String email) -> {
 
         });
-        When("^(?:he|she) follows the activation instructions in the email", () -> {
+        When("^they follow the activation instructions in the email", () -> {
 
         });
         Then("^their account is activated", () -> {
@@ -108,6 +134,7 @@ public class TeacherSteps implements En {
         And("^they can no longer log in", () -> {
             String currentUser = state.getCurrentUser();
         });
+
     }
 
 

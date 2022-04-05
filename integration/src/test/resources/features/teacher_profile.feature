@@ -1,7 +1,7 @@
 Feature: Management of the teacher profile
   This feature contains registration, updating and deletion of a user account for teachers, including all profile data
 
-  Scenario: A new user registers on the platform
+  Scenario: A new user registers on the platform with only mandatory data
     Given user Iris is new to the platform
     When Iris indicates they want to register as a teacher
     Then they are presented with a registration form
@@ -9,12 +9,29 @@ Feature: Management of the teacher profile
     And their surname as de Bruin
     And their email as iris.de.bruin@outlook.com
     And their password as superSecret
-    And their post code as 5591
     And their country as the Netherlands
-    And indicates that she agrees with the privacy statement
-    And she confirms the registration
+    And indicates that they agree with the privacy statement
+    And they confirm the registration
     Then they receive an email at iris.de.bruin@outlook.com asking to activate their account
-    When she follows the activation instructions in the email
+    When they follow the activation instructions in the email
+    Then their account is activated
+
+  Scenario: A new user registers on the platform, completing their full profile
+    Given user Jeffrey is new to the platform
+    When Jeffrey indicates they want to register as a teacher
+    Then they are presented with a registration form
+    When they give their first name as Jeffrey
+    And their surname as de Bruin
+    And their email as jeffrey.wang@outlook.com
+    And their password as superSecret
+    And their post code as 3081
+    And their country as the Netherlands
+    And their available days as Monday,Wednesday,Friday
+    And their preferences as Liefst alleen groep acht.
+    And indicates that they agree with the privacy statement
+    And they confirm the registration
+    Then they receive an email at iris.de.bruin@outlook.com asking to activate their account
+    When they follow the activation instructions in the email
     Then their account is activated
 
   Scenario: A user updates their profile data
