@@ -60,28 +60,28 @@ public class TeacherAccountManagementSteps implements En {
         });
         When("^their country as (.*?)$", (String country) -> {
 
-            And("^their available days (?:as|to) (.*?)$", (String list) -> {
-                var uniqueDays = Set.of(StringUtils.split(list, ","));
-                for (String weekday : uniqueDays) {
-                    switch (weekday.trim().toLowerCase()) {
-                        case "monday":
-                            break;
-                        case "tuesday":
-                            break;
-                        case "wednesday":
-                            break;
-                        case "thursday":
-                            break;
-                        case "friday":
-                            break;
-                        default:
-                            throw new IllegalStateException("Unknown day of the week: " + weekday);
-                    }
-                }
-            });
-            And("^their profile text (?:as|to) (.*?)$", (String preferences) -> {
-            });
+        });
+        And("^their profile text (?:as|to) (.*?)$", (String preferences) -> {
+        });
 
+        And("^their available days (?:as|to) (.*?)$", (String list) -> {
+            var uniqueDays = Set.of(StringUtils.split(list, ","));
+            for (String weekday : uniqueDays) {
+                switch (weekday.trim().toLowerCase()) {
+                    case "monday":
+                        break;
+                    case "tuesday":
+                        break;
+                    case "wednesday":
+                        break;
+                    case "thursday":
+                        break;
+                    case "friday":
+                        break;
+                    default:
+                        throw new IllegalStateException("Unknown day of the week: " + weekday);
+                }
+            }
         });
         When("^indicates that they agree with the privacy statement", () -> {
 
