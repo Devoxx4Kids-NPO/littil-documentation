@@ -1,12 +1,12 @@
 package org.littil.integration;
 
-import com.google.common.collect.Sets;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java8.En;
-import io.cucumber.java8.Scenario;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.assertj.core.api.Assertions;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.Set;
 
@@ -16,19 +16,19 @@ import static org.assertj.core.api.Assertions.*;
 public class TeacherAccountManagementSteps implements En {
 
     private UserState state;
-    WebDriver webDriver;
+    WebDriverAdapter wd;
 
-    //@Before
+    @Before
     public void before(Scenario scenario) {
-        webDriver = WebDriverAdapter.getDriver();
+        wd = WebDriverAdapter.getinstance();
         scenario.log("Runs before each scenarios *not* tagged with @foo");
     }
 
-    //@After
+    @After
     public void after(Scenario scenario) {
         scenario.log("Runs after each scenario");
-        if (webDriver != null) {
-            webDriver.quit();
+        if (wd != null) {
+            wd.getDriver().quit();
         }
     }
 
@@ -40,23 +40,27 @@ public class TeacherAccountManagementSteps implements En {
         });
         When("^(.*?) indicates they want to register as a teacher", (String name) -> {
             assertThat(state.getCurrentUser()).isNull();
+            wd.getDriver().navigate().to("http://localhost:4200");
+            wd.byId("registerTeacherLink").click();
         });
         Then("^they are presented with a registration form", () -> {
+            wd.waitUntil().until(d -> ExpectedConditions.urlContains("register-teacher"));
         });
         When("^they give their first name as (.*?)$", (String firstName) -> {
-
+            wd.byId("firstName").sendKeys(firstName);
         });
         When("^their surname as (.*?)", (String surname) -> {
-
+            wd.byId("surname").sendKeys(surname);
         });
         When("^their email as (.*?)$", (String email) -> {
-
+            wd.byId("email").sendKeys(email);
         });
         When("^their password (?:as|to) (.*?)$", (String pwd) -> {
-
+            wd.byId("password").sendKeys(pwd);
+            wd.byId("password_repeat").sendKeys(pwd);
         });
-        When("^their post code (?:as|to) (\\d+)", (Integer int1) -> {
-
+        When("^their post code (?:as|to) (\\d+)", (Integer postcode) -> {
+            wd.byId("postalCode").sendKeys(Integer.toString(postcode));
         });
         When("^their country as (.*?)$", (String country) -> {
 
@@ -84,10 +88,10 @@ public class TeacherAccountManagementSteps implements En {
             }
         });
         When("^indicates that they agree with the privacy statement", () -> {
-
+            wd.byId("privacy").click();
         });
         When("^they confirm the registration", () -> {
-
+            wd.byId("register-teacher").click();
         });
         Then("^they receive an email at (.*?) asking to activate their account", (String email) -> {
 
