@@ -1,0 +1,51 @@
+site_name: 'Littil documentation'
+site_description: 'Documentation of the Littil platform'
+repo_url: https://github.com/Devoxx4Kids-NPO/littil-documentation
+edit_uri: edit/main/docs
+
+theme:
+  name: material
+  icon:
+    logo: logo
+  custom_dir: docs/theme/littil-theme
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.indexes
+    - navigation.top
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search:
+      lang: en
+  - build_plantuml:
+      render: 'local' # or "local" for local rendering
+      bin_path: '/usr/local/bin/plantuml' # ignored when render: server
+      server: 'http://www.plantuml.com/plantuml' # offical plantuml server
+      disable_ssl_certificate_validation: true # for self-signed and invalid certs
+      output_format: 'svg' # or "png"
+      diagram_root: 'docs/diagrams' # should reside under docs_dir
+      output_folder: 'out'
+      input_folder: 'src'
+      input_extensions: '' # comma separated list of extensions to parse, by default every file is parsed
+  - exclude:
+      glob:
+        - diagrams/src/*
+        - theme/*
+
+nav:
+  - index.md
+  - Foundation:
+      - about/index.md
+  - Platform:
+    - platform/local-development/index.md
+    - Architecture:
+        - platform/architecture/index.md
+    - Development:
+        - Running backend locally: platform/local-development/set-up-backend-environment.md
+  - Teacher materials:
+      - teaching_materials/index.md

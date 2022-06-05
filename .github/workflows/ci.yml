@@ -1,0 +1,20 @@
+name: generate-and-push-documentation
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - docs/*
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout documentation source
+        uses: actions/checkout@v2
+
+      - name: Build container
+        run: docker build . -f Dockerfile -t local
+
+      - name: Generate en publish documentation
+        run: docker run -v ${PWD}:/docs --entrypoint "/bin/sh" local -c "/usr/bin/git config --global --add safe.directory /docs && mkdocs gh-deploy --force"
