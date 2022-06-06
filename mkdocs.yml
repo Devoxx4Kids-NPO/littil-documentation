@@ -47,5 +47,7 @@ nav:
         - platform/architecture/index.md
     - Development:
         - Running backend locally: platform/local-development/set-up-backend-environment.md
+    - Specs:
+          - features/index.md
   - Teacher materials:
       - teaching_materials/index.md
