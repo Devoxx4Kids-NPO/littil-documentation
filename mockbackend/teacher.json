@@ -1,9 +1,0 @@
-{
-  "firstName": "Iris",
-  "surname": "de Bruin",
-  "email": "iris.de.bruin@littil.org",
-  "postalCode": "3000",
-  "country": "nl",
-  "preferences": "this is a free text field",
-  "availability": [0,2,4]
-}
