@@ -1,0 +1,4 @@
+@startuml
+  Goofy ->  MickeyMouse: calls
+  Goofy <-- MickeyMouse: responds
+@enduml
