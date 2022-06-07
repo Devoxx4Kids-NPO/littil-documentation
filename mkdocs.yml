@@ -9,6 +9,7 @@ theme:
     logo: logo
   custom_dir: docs/theme/littil-theme
   features:
+    - content.code.annotate
     - navigation.instant
     - navigation.tracking
     - navigation.tabs
@@ -36,6 +37,14 @@ plugins:
       glob:
         - diagrams/src/*
         - theme/*
+  - include-markdown
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
 
 nav:
   - index.md
