@@ -20,8 +20,13 @@ Will generate:
 
 ![Example diagram](diagrams/out/example.svg) 
 
-You can also include Gherkin files
+You can also include files using:
 
-~~~{.gherkin linenums=1 title="Teacher account feature"}
-{% include "../integration/src/test/resources/features/teacher_account.feature" %}
+~~~{.Dockerfile linenums=1 title="Dockerfile"}
+{% include "../Dockerfile" %}
+~~~
+
+Or even include files from a git repository:
+~~~{.gherkin linenums=1 title="Feature file fetched from a repository"}
+{{ gitsnippet('Devoxx4Kids-NPO/littil-e2e', 'src/test/resources/features/teacher_registration.feature') }}
 ~~~

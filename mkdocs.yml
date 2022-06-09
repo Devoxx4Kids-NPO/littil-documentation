@@ -38,6 +38,9 @@ plugins:
         - diagrams/src/*
         - theme/*
   - include-markdown
+  - git-authors
+  - git-snippet
+  - git-revision-date-localized
 
 markdown_extensions:
   - pymdownx.highlight:
