@@ -43,7 +43,7 @@ the documentation. Run the following command `in the root of the project` to pre
 available on [Docker hub](https://hub.docker.com/r/pepijnschildkamp/mkdocs-material-plantuml).
 
 ```shell
-$ docker run --rm -it -p 8000:8000 -v ${PWD}:/docs ghcr.io/Devoxx4Kids-NPO/littil-documentation:latest
+$ docker run --rm -it -p 8000:8000 -v ${PWD}:/docs ghcr.io/devoxx4kids-npo/littil-documentation:latest
 ```
 
 The documentation site should be available at `http://localhost:8000`.
@@ -55,7 +55,7 @@ Building the documentation site is done via the GitHub Actions when merging the 
 Though, if you are in need to inspect the generated site artifacts you can run the following command.
 
 ```shell
-$ docker run --rm -it -p 8000:8000 -v ${PWD}:/docs ghcr.io/Devoxx4Kids-NPO/littil-documentation:latest build
+$ docker run --rm -it -p 8000:8000 -v ${PWD}:/docs ghcr.io/devoxx4kids-npo/littil-documentation:latest build
 ```
 
 The generated artifacts are located in the directory `./site`. Make sure you do not commit this directory to the repository.

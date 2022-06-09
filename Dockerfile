@@ -1,6 +1,12 @@
 FROM squidfunk/mkdocs-material
 
-RUN  pip install --no-cache-dir mkdocs-build-plantuml-plugin mkdocs-exclude
+RUN  pip install --no-cache-dir \
+     mkdocs-build-plantuml-plugin \
+     mkdocs-exclude \
+     mkdocs-include-markdown-plugin \
+     mkdocs-git-snippet \
+     mkdocs-git-revision-date-localized-plugin \
+     mkdocs-git-authors-plugin
 
 RUN apk update && apk upgrade && \
     apk add --no-cache gcc musl-dev openjdk11-jdk curl fontconfig ttf-dejavu
