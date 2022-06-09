@@ -37,7 +37,7 @@ No contact details will be shown. This is only visible for the admin. If a schoo
 | a school contact looks up their school record | school | 
 | a school can look up all other schools with basic details | school |
 | a teacher can looks up the school that they are connected with full details | teacher |
-| a teacher can look up any school with basic details |
+| a teacher can look up any school with basic details | teacher |
 
 
 ### Write permissions for teacher resource
