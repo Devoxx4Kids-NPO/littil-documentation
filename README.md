@@ -1,24 +1,7 @@
-# littil-documentation
+# LITTIL
 
-This repository contains high-level documentation about the Littil platform, including a karate mock server implementation and 
-a set of end to end tests (based on cucumber) containing detailed, human-readable specifications. 
-
-Each separate repository in the [Littil space](https://github.com/Devoxx4Kids-NPO) also contains more detailed technical documentation.
-
-* [What is Littil?](https://littil.org/)
-* [Project setup](CONTRIBUTE.md)
-* [Conceptual model and data model](model.md)
-
-## Gherkin feature files 
-Detailed documentation of features and scenarios can be found under [integration/src/test/resources/org/littil/integration](./integration/src/test/resources/org/littil/integration).
-
-## Running the mock backend server
-This uses the [karate Netty](https://karatelabs.github.io/karate/karate-netty/) framework. You run the server as follows:
-
-```bash
-cd mockbackend
-./run.sh
-```
+If you are looking for documentation of our LITTIL platform, then please visit our [documentation site](https://devoxx4kids-npo.github.io/littil-documentation/).
+If not and you are interested in contributing to our documentation then please read the instructions below.
 
 ## Documentation site
 Our documentation, which is published via GitHub pages, is generated with [MkDocs (with a custom material theme)](https://squidfunk.github.io/mkdocs-material/).
@@ -39,8 +22,7 @@ $ docker build . -t <new_tag>
 
 ### Preview documentation site locally
 When you want to preview the documentation site locally you can use the same Docker container which is used to build
-the documentation. Run the following command `in the root of the project` to preview the new documentation site. The example below uses the latest image
-available on [Docker hub](https://hub.docker.com/r/pepijnschildkamp/mkdocs-material-plantuml).
+the documentation. Run the following command `in the root of the project` to preview the new documentation site.
 
 ```shell
 $ docker run --rm -it -p 8000:8000 -v ${PWD}:/docs ghcr.io/devoxx4kids-npo/littil-documentation:latest
