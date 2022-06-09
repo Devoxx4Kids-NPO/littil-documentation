@@ -53,10 +53,14 @@ nav:
   - index.md
   - Foundation:
       - about/index.md
+      - Contribute:
+          - about/contribute.md
   - Platform:
     - platform/local-development/index.md
     - Architecture:
         - platform/architecture/index.md
+    - Data models:
+        - platform/architecture/model.md
     - Development:
         - Running backend locally: platform/local-development/set-up-backend-environment.md
   - Teacher materials:
