@@ -15,28 +15,38 @@ The following table lists the available roles that can be assigned to registered
 Authorized users of the platform invoke the REST api to read and write resources from/to the data store.
 
 For non-admin users, not all data records in a single resources (school or teacher) can be accessed/edited with the same permissions.
-Typically, such a user can only edit their own record but read all other records. For a teachter this would be their own record they can edit. A teacher can also see all other teachers but not all details from them (only names, city and meterials they teach. This way a teacher can find another teacher to work on new materials.
-A school can find all schools registered but only see the basic details like the name of the school and the city. This is also for the school when they search for a teacher. They can find all teachers in the system but only the name, city and materials they teach.
-No contact details will be shown. This is only visible for the admin. If a school wants to come in contact with a teacher they can select the teacher, write a message and send it using the LITTIL platform. The LITTIL platform will mail the teacher the message and the contactdetails of the school.
+
+Each resource has both private and public fields/properties
+
+* private fields can only be viewed and edited by the owner of the record (i.e. of a teacher's or school's own record) or after express permission.
+* public fields are available to all users of the system
+
+Teachters can update their own record and see basic details of all other teachers: name, city and materials they teach. 
+
+A school contact can look for other schools and see basic details, like the name and region.
+When they search for a teacher, they can find all teachers and see the same public fields that other teachers can see.
+
+Contact details are never part of public data. These are only visible to admins 
+
+If schools and teachers want to get in touch for the first time, they can do so through the LITTIL platform, which will relay the message through email.
 
 ### Read permissions for teacher resources
 
 | permission | assigned to roles | comment |
 | ---- | ---- | ---- |
-| list teachers by any search criteria | admin | a search can be unrestricted search and hence return the complete list of teachers|
-| look up a random teacher by their id | admin |
-| a teacher looks up their own record | teacher|
-| a school can looks up any teacher with basic details | school |  |
+| list public teacher data by any search criteria | admin | a search can be unrestricted search and hence return the complete list of teachers|
+| look up any teacher's full data by their id | admin |
+| a teacher looks up their own complete record | teacher |
+| look up basic details of a teacher by id | school, teacher |  |
 
 ### Read permissions for school resources
 
 | permission | assigned to roles | comment |
 | ---- | ---- | ---- |
-| list schools by any search criteria | admin | a search can be unrestricted search and hence return the complete list of schools.|
-| look up a random school by its id | admin |
-| a school contact looks up their school record | school | 
-| a school can look up all other schools with basic details | school |
-| a teacher can looks up the school that they are connected with full details | teacher |
+| list public school data by any search criteria | school | a search can be unrestricted search and hence return the complete list of schools.|
+| look up a school's full data by its id | admin |
+| a school contact looks up their school's full record | school |
+| a teacher can look up the school that they are connected with full details | teacher |
 | a teacher can look up any school with basic details | teacher |
 
 
