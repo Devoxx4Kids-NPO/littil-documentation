@@ -59,8 +59,12 @@ nav:
     - platform/local-development/index.md
     - Architecture:
         - platform/architecture/index.md
-    - Data models:
-        - platform/architecture/model.md
+        - Data model: platform/architecture/model.md
+        - Authentication/authorization: platform/architecture/auth.md
+    - Features:
+        - Overview: platform/features/index.md
+        - Teacher: platform/features/teacher.md
+        - School: platform/features/school.md
     - Development:
         - Running backend locally: platform/local-development/set-up-backend-environment.md
   - Teacher materials:

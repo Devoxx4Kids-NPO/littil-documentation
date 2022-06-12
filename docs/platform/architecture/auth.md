@@ -1,4 +1,4 @@
-#Authentication and authorization WORK IN PROGRESS
+# Authentication and authorization WORK IN PROGRESS
 
 ## Role and permissions tables
 
@@ -18,17 +18,19 @@ For non-admin users, not all data records in a single resources (school or teach
 
 Each resource has both private and public fields/properties
 
-* private fields can only be viewed and edited by the owner of the record (i.e. of a teacher's or school's own record) or after express permission.
+* private fields can only be viewed and edited by the owner of the record (i.e. of a teacher's or school's own record) or after express
+  permission.
 * public fields are available to all users of the system
 
-Teachters can update their own record and see basic details of all other teachers: name, city and materials they teach. 
+Teachers can update their own record and see basic details of all other teachers: name, city and materials they teach.
 
-A school contact can look for other schools and see basic details, like the name and region.
-When they search for a teacher, they can find all teachers and see the same public fields that other teachers can see.
+A school must have a registered user who acts as the designated contact. They can look for other schools and see basic details, like the name and region. 
+When they search for a teacher, they can see the same public fields that other teachers can see.
 
-Contact details are never part of public data. These are only visible to admins 
+Contact details (phone, email, street addresses) are never part of public data. These are only visible to admins and the respective holder of the account.
 
-If schools and teachers want to get in touch for the first time, they can do so through the LITTIL platform, which will relay the message through email.
+If schools and teachers want to get in touch for the first time, they can do so through the LITTIL platform, which will relay the message
+through email.
 
 ### Read permissions for teacher resources
 
@@ -49,7 +51,6 @@ If schools and teachers want to get in touch for the first time, they can do so 
 | a teacher can look up the school that they are connected with full details | teacher |
 | a teacher can look up any school with basic details | teacher |
 
-
 ### Write permissions for teacher resource
 
 | permission | assigned to roles | comment |
@@ -63,7 +64,7 @@ If schools and teachers want to get in touch for the first time, they can do so 
 
 | permission | assigned to roles | comment |
 | ---- | ---- | ---- |
-|update the school record of the logged-in user|teacher||
-|delete the school record of the logged-in user|teacher||
-|update a school record for a random user|admin||
-|delete a school record for a random user|admin||
+|update a school record by its designated contact person|teacher||
+|delete a school record by its designated contact person|teacher||
+|update any school record |admin||
+|delete any school record |admin||
