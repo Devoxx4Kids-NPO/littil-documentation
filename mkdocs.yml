@@ -38,9 +38,12 @@ plugins:
         - diagrams/src/*
         - theme/*
   - include-markdown
-  - git-authors
-  - git-snippet
-  - git-revision-date-localized
+  - git-authors:
+      enabled: !ENV [ENABLE_GIT_INTEGRATION, True]
+  - git-snippet:
+      all_pages: !ENV [ENABLE_GIT_INTEGRATION, True]
+  - git-revision-date-localized:
+      enabled: !ENV [ENABLE_GIT_INTEGRATION, True]
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -60,7 +63,9 @@ nav:
     - Architecture:
         - platform/architecture/index.md
         - Data model: platform/architecture/model.md
-        - Authentication/authorization: platform/architecture/auth.md
+        - Authentication/authorization:
+            - platform/architecture/auth.md
+            - Oauth0 integration: platform/architecture/oauth0-integration.md
     - Features:
         - Overview: platform/features/index.md
         - Teacher: platform/features/teacher.md
