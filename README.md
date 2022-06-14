@@ -25,7 +25,7 @@ When you want to preview the documentation site locally you can use the same Doc
 the documentation. Run the following command `in the root of the project` to preview the new documentation site.
 
 ```shell
-$ docker run --rm -it -p 8000:8000 -v ${PWD}:/docs ghcr.io/devoxx4kids-npo/littil-documentation:latest
+$ docker run --rm -it -p 8000:8000 -v ${PWD}:/docs -e ENABLE_GIT_INTEGRATION=False ghcr.io/devoxx4kids-npo/littil-documentation:latest
 ```
 
 The documentation site should be available at `http://localhost:8000`.
@@ -37,7 +37,7 @@ Building the documentation site is done via the GitHub Actions when merging the 
 Though, if you are in need to inspect the generated site artifacts you can run the following command.
 
 ```shell
-$ docker run --rm -it -p 8000:8000 -v ${PWD}:/docs ghcr.io/devoxx4kids-npo/littil-documentation:latest build
+$ docker run --rm -it -p 8000:8000 -v ${PWD}:/docs -e ENABLE_GIT_INTEGRATION=False ghcr.io/devoxx4kids-npo/littil-documentation:latest build
 ```
 
 The generated artifacts are located in the directory `./site`. Make sure you do not commit this directory to the repository.
@@ -46,6 +46,12 @@ The generated artifacts are located in the directory `./site`. Make sure you do 
 If you want to alter the theme of the documentation site you have 2 options. When only changing colors you can enhance
 the file `./docs/stylesheets/extra.css`. The littil theme itself is located at `./docs/theme/littil-theme`. Follow the
 [guide of MkDocs Material](https://squidfunk.github.io/mkdocs-material/customization/#extending-the-theme) on how to overwrite the theme.
+
+### Git integration
+The template has several plugins which uses the GitHub API anonymously. Only in build stage we have a GitHub token available
+to communicate with GitHub authenticated. This anonymous integration has a limit rating which you can hit when writing documentation
+locally. To disable the Git features you should start the container with the environment variable `ENABLE_GIT_INTEGRATION` 
+set to `False`. Starting the container without the variable or with the value set to `True` will enable the features.
 
 ### Writing documentation
 
