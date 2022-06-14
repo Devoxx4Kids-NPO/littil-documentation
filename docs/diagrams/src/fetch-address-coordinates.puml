@@ -1,0 +1,33 @@
+@startuml
+skinparam sequence {
+    ArrowColor #2B2E83
+    GroupBackgroundColor #FFFFFF
+}
+
+boundary "User service"             as user_service <<backend>>
+control "User repository"           as user_repository <<backend>>
+entity "Littil database"            as littil_database <<backend>>
+queue "Event bus"                   as internal_event_bus <<backend>>
+boundary "Google API client"        as backend_google_client <<backend>>
+
+group #DFEFFC Asynchronous location data enrichment
+user_service -> internal_event_bus : On upsert event
+activate user_service #F18F2D
+activate internal_event_bus #F9B233
+internal_event_bus -> backend_google_client : Fetch long and lat coordinates
+activate backend_google_client #F18F2D
+internal_event_bus <- backend_google_client : Found corresponding coordinates
+deactivate backend_google_client
+user_service <- internal_event_bus : Found additional location data
+deactivate internal_event_bus
+user_service -> user_repository : Store coordinates to user location
+activate user_repository #F9B233
+user_repository -> littil_database : update additional location data
+activate littil_database #F18F2D
+user_repository <- littil_database : persisted
+deactivate littil_database
+user_service <- user_repository : Coordinates persisted
+deactivate user_repository
+deactivate user_service
+end
+@enduml

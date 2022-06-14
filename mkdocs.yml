@@ -1,5 +1,6 @@
 site_name: 'Littil documentation'
 site_description: 'Documentation of the Littil platform'
+site_url: https://devoxx4kids-npo.github.io/littil-documentation/
 repo_url: https://github.com/Devoxx4Kids-NPO/littil-documentation
 edit_uri: edit/main/docs
 
@@ -64,8 +65,8 @@ nav:
         - platform/architecture/index.md
         - Data model: platform/architecture/model.md
         - Authentication/authorization:
-            - platform/architecture/auth.md
-            - Oauth0 integration: platform/architecture/oauth0-integration.md
+            - platform/architecture/auth/index.md
+            - Auth0 Integration: platform/architecture/auth/auth0-integration.md
     - Features:
         - Overview: platform/features/index.md
         - Teacher: platform/features/teacher.md
