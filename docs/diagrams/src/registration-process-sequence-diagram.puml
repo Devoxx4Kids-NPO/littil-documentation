@@ -1,0 +1,44 @@
+@startuml
+skinparam sequence {
+    ArrowColor #2B2E83
+    GroupBackgroundColor #FFFFFF
+}
+actor       "Platform user"         as platform_user
+boundary    "Registration form"     as frontend_registration_form <<frontend>>
+control     "User resource"         as user_resource <<backend>>
+boundary    "User service"          as user_service <<backend>>
+control     "User repository"       as user_repository <<backend>>
+entity      "Littil database"       as littil_database <<backend>>
+boundary    "Auth0 service"         as backend_auth0_service <<backend>>
+
+group #DFEFFC Synchronous registration sequence
+platform_user -> frontend_registration_form: Submit registration form
+activate frontend_registration_form #F18F2D
+frontend_registration_form -> user_resource: Send form payload to backend
+activate user_resource #F9B233
+user_resource -> user_service : Create school / teacher
+activate user_service #F18F2D
+user_service -> user_repository : To entity
+activate user_repository #F9B233
+user_repository -> littil_database : Persist school / teacher
+activate littil_database #F18F2D
+user_repository <- littil_database : School / teacher persisted
+deactivate littil_database
+user_service <- user_repository : To domain
+deactivate user_repository
+user_service -> backend_auth0_service : Register user via API
+activate backend_auth0_service #F9B233
+user_service <- backend_auth0_service : Return created user data
+deactivate backend_auth0_service
+user_service -> backend_auth0_service : Authorize user to school / teacher
+activate backend_auth0_service #F18F2D
+user_service <- backend_auth0_service : Return persisted user
+deactivate backend_auth0_service
+user_resource <- user_service : map user to DTO and return
+deactivate user_service
+user_resource -> frontend_registration_form : Registration successful
+deactivate user_resource
+frontend_registration_form -> platform_user: Redirect user to login form
+deactivate frontend_registration_form
+end
+@enduml
