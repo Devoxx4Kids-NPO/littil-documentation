@@ -1,56 +1,15 @@
 @startuml
+package auth0 {
     entity User {
         - id: String
+        --
+        - school: School
+        - teacher: Teacher
         ..
-        - typeId: UUID
         - accountType: AccountType
-        --
-        - provider: Provider
+        ..
         - emailAddress: String
-    }
-
-    entity Teacher {
-        - id: UUID
-        ..
-        - firstName: String
-        - surname: String
-        - location: Location
         - locale: String
-        - availability: Set<DayOfWeek>
-    }
-
-    entity School {
-        - id: UUID
-        ..
-        - name: String
-        - contactPersonName: String
-        - location: Location
-        - locale: String
-    }
-
-    entity Location {
-        - address: String
-        - postalCode: String
-        - longitude: Decimal
-        - latitude: Decimal
-    }
-
-    enum Provider {
-        AUTH0
-        --
-        +isAssociatedWith()
-    }
-
-    enum AccountType {
-        SCHOOL
-        TEACHER
-    }
-
-    entity UserSetting <<Serializable>>{
-        userId: UUID
-        key: String
-        ..
-        value: String
     }
 
     note left of User::id
@@ -64,21 +23,63 @@
         platform wide.
     end note
 
+    note left of AccountType::LITTIL
+        used for internal LITTIL accounts
+    end note
+}
+
+package LiTTiL {
+    entity Teacher {
+        - id: UUID
+        ..
+        - firstName: String
+        - surname: String
+        - location: Location
+        - availability: Set<DayOfWeek>
+    }
+
+    entity School {
+        - id: UUID
+        ..
+        - name: String
+        - contactPersonName: String
+        - location: Location
+    }
+
+    entity Location {
+        - country: String
+        - address: String
+        - postalCode: String
+        - longitude: Decimal
+        - latitude: Decimal
+    }
+    enum AccountType {
+        USER
+        LITTIL
+    }
+
+    entity UserSetting <<Serializable>>{
+        userId: String
+        key: String
+        ..
+        value: String
+    }
+
     note left of UserSetting
         Settings are really generic.
         The frontend can store any
         setting they like by
         introducing a new key.
     end note
+}
 
-    Teacher "1..1" *-- User
-    School *-- User: "1..1"
+    Teacher *-- User: "0..1"
+    School *-- User: "0..1"
 
     Location -- Teacher::location: "1..1"
     Location -- School::location : "1..1"
 
-    User --o UserSetting : "1..*"
+    User --* UserSetting : "1..*"
 
-    User::provider -- Provider
     User::accountType -- AccountType
 @enduml
