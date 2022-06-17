@@ -130,6 +130,17 @@ the native and (no-)test parameters are optional.
                  
 For more commands you can run `$ ./quarkus --help` / `$ ./mvnw quarkus:help`
 
+## Environment variables
+Some Quarkus configuration is injected via environment variables so that the same application can run on any environment.
+To make it easy the configuration has a fallback when no environment variables are found. Those configurations are 
+only applicable for the development (local) environment. Though, some configuration (such as passwords or keys) should not exist within the code.
+
+Booting the application without these configuration will result in errors. To make it easy to set up environment variables
+Quarkus has multiple options. Working with an local `.env` file is recommended. How to implement this in your local environment
+is described on the [quarkus official documentation site](https://quarkus.io/guides/config-reference#env-file).
+
+_Make sure you never commit this `.env` file to the repository since it contains sensitive information._
+
 ## Known issues
 
 ### Docker daemon not running
