@@ -17,3 +17,23 @@ should have an endpoint. For example: `/api/v1/registrate/(school|teacher)`. At 
 type of an account. 
 
 ![Registration sequence diagram](../../../diagrams/out/registration-process-sequence-diagram.svg)
+
+## Custom token claims
+To provide our tokens with useful information of the authorizations of the user. From within the littil-backend we feed the metadata of the user with this information. Using an `custom-action` on the login-flow we convert the metadata to custom-claims.
+
+The custom-action can be found below `Actions > library > Custom actions`
+
+We use the following code:
+``` javascript
+exports.onExecutePostLogin = async (event, api) => {
+  const namespace = '';
+  const { littil_user_id, authorizations } = event.user.app_metadata;
+
+  if(event.authorization) {
+    api.accessToken.setCustomClaim(`${namespace}littil_user_id`, littil_user_id);
+    api.accessToken.setCustomClaim(`${namespace}authorizations`, authorizations);
+  }
+};
+```
+
+After creating the custom-action, make sure to drag the custom-action into the login flow.
