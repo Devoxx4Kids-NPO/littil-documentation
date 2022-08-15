@@ -1,0 +1,65 @@
+@startuml
+actor user as user
+participant "littil-frontend" as litFront
+participant "littil-backend" as litBack
+participant "littil-database" as littilDB
+participant authenticationServer as authServer
+
+user -> litFront: Register
+litFront -> litBack: Create user
+litBack -> littilDB: Check if user exists
+littilDB --> litBack: Returns user if exists
+
+alt user already exists
+   litBack --> litFront: User already exists
+end
+
+litBack -> litBack: Generate random password
+litBack -> authServer: Create user
+authServer --> litBack: Response
+
+alt Response was not "OK"
+   litBack --> litFront: (TODO FIXME) Internal server error
+end
+
+litBack -> user: Send "Welcome to littil" mail
+
+litBack --> litFront: Created user
+litFront --> user: Show login screen
+
+user -> litFront: Login
+litFront -> authServer: Show login screen
+authServer --> litFront: Logged-in user
+litFront --> user: Show GuestTeacher/School\nregistration form
+
+user -> litFront: Register as School/GuestTeacher
+
+alt Register as GuestTeacher
+    litFront -> litBack: Register as GuestTeacher
+    litBack -> littilDB: Check if GuestTeacher is already exists
+    littilDB --> litBack: Response
+    alt User already attached to School/GuestTeacher
+        litBack --> litFront: Invalid request, user already\nregistered as School/GuestTeacher
+    end
+    litBack -> littilDB: Store GuestTeacher
+    litBack -> authServer: Add GuestTeacher role to user
+    litBack --> litFront: Response
+    litFront -> authServer: Retrieve new token
+    authServer --> litFront: Token with GuestTeacher role
+    litFront --> user: Show GuestTeacher dashboard
+else Register as School
+    litFront -> litBack: Register as School
+    litBack -> littilDB: Check if School is already exists
+    littilDB --> litBack: Response
+    alt User already attached to School/GuestTeacher
+        litBack --> litFront: Invalid request, user already\nregistered as School/GuestTeacher
+    end
+    litBack -> littilDB: Store School
+    litBack -> authServer: Add School role to user
+    litBack --> litFront: Response
+    litFront -> authServer: Retrieve new token
+    authServer --> litFront: Token with School role
+    litFront --> user: Show School dashboard
+end
+
+@enduml
