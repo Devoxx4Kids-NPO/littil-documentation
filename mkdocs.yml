@@ -72,6 +72,7 @@ nav:
         - Teacher: platform/features/teacher.md
         - School: platform/features/school.md
         - Match making: platform/features/match-making.md
+    - Infrastructure: platform/infrastructure/index.md
     - Development:
         - platform/local-development/index.md
         - Running frontend locally: platform/local-development/set-up-frontend-environment.md
