@@ -21,3 +21,6 @@ AWS Feedback 2022-09-13:
   - Use aws_ecs_patterns in TypeScript CDK, network details will be abstracted away
 - RDS (Relational Database Service) for persistence
   - EC2 instance T4G-micro, 2vCPU, 1GB, good for ~89 DB connections
+
+Decisions on start of implementation front-end infra 2022-09-24
+- Use Cloudfront & S3 for front-end. Amplify would use those anyway, and could be useful. But for now it adds unnecessary complexity.
