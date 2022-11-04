@@ -1,19 +1,19 @@
 # LITTIL
 
 If you are looking for documentation of our LITTIL platform, then please visit our [documentation site](https://devoxx4kids-npo.github.io/littil-documentation/).
-If not and you are interested in contributing to our documentation then please read the instructions below.
+If you are interested in contributing to our documentation then please read the instructions below.
 
 ## Documentation site
 Our documentation, which is published via GitHub pages, is generated with [MkDocs (with a custom material theme)](https://squidfunk.github.io/mkdocs-material/).
-You can find instructions below about writing documentation, previewing and building the documentation.
+Below you can find instructions about writing, previewing and building the documentation.
 
 ### Prerequisites
-We created a custom image which includes all tools needed to write documentation using MkDocs, Markdown and PlantUML.
+We created a custom image which includes all the tools needed to write documentation using MkDocs, Markdown and PlantUML.
 Because of this, you only need docker installed on your machine when writing and building documentation locally. You
 can find instructions [here](https://docs.docker.com/get-docker/) on how to install docker on your machine.
 
 ### Docker image
-If you are in need to install an extra plugin for example, you can create a new image using the Dockerfile located at:
+If you need to install an extra plugin, for example, you can create a new image using the Dockerfile located at:
 `./Dockerfile`. Alter the file accordingly and then run:
 
 ```shell
@@ -48,7 +48,7 @@ the file `./docs/stylesheets/extra.css`. The littil theme itself is located at `
 [guide of MkDocs Material](https://squidfunk.github.io/mkdocs-material/customization/#extending-the-theme) on how to overwrite the theme.
 
 ### Git integration
-The template has several plugins which uses the GitHub API anonymously. Only in build stage we have a GitHub token available
+The template has several plugins which use the GitHub API anonymously. Only during the build stage we have a GitHub token available
 to communicate with GitHub authenticated. This anonymous integration has a limit rating which you can hit when writing documentation
 locally. To disable the Git features you should start the container with the environment variable `ENABLE_GIT_INTEGRATION` 
 set to `False`. Starting the container without the variable or with the value set to `True` will enable the features.
