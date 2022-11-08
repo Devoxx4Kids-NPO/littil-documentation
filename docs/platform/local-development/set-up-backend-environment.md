@@ -138,7 +138,7 @@ only applicable for the development (local) environment. Though, some configurat
 Booting the application without these configuration will result in errors. To make it easy to set up environment variables
 Quarkus has multiple options. Working with an local `.env` file is recommended. How to implement this in your local environment
 is described on the [quarkus official documentation site](https://quarkus.io/guides/config-reference#env-file). 
-You can copy the `.env.example` file and fill it the correct values to config Auth0
+You can copy the `.env.example` file and season it with the correct values to config Auth0
 
 _Make sure you never commit this `.env` file to the repository since it contains sensitive information._
 
