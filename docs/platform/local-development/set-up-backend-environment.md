@@ -41,14 +41,14 @@ To see which versions are available for java run:
 $ sdk list java 
 ```
 
-Then install the latest java 11 version, i.e:
+Then install the latest java 17 version, i.e:
 ```shell
-$ sdk install java 11.0.14-zulu    
+$ sdk install java 17.0.5-zulu    
 ```                            
 For more information regarding `SDKMAN!` please visit their website at: [https://sdkman.io/](https://sdkman.io/)
 
 _if you which to install java directly you can also download it directly from the
-[Oracle website.](https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html)_
+[Oracle website.](https://www.oracle.com/java/technologies/downloads/#java17)_
                        
 #### Windows
 _Please contribute_
