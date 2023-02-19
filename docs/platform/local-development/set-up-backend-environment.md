@@ -8,7 +8,7 @@ in a docker container for you.
 ## Prerequisites
 Before you are able to run the API of LITTIL you need to make sure you have the following software installed on 
 your machine.
-- Java 11
+- Java 17
 - Maven
 - Docker
 - Quarkus cli
