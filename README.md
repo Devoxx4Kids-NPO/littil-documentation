@@ -28,6 +28,11 @@ the documentation. Run the following command `in the root of the project` to pre
 $ docker run --rm -it -p 8000:8000 -v ${PWD}:/docs -e ENABLE_GIT_INTEGRATION=False ghcr.io/devoxx4kids-npo/littil-documentation:latest
 ```
 
+or if you want to use docker compose
+```shell
+$ docker compose up
+```
+
 The documentation site should be available at `http://localhost:8000`.
 
 You can also use your local build image by changing the last parameter with the tag you used.

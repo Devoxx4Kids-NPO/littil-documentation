@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  docs:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - "8000:8000"
+    environment:
+      - ENABLE_GIT_INTEGRATION=False
+    volumes:
+      - .:/docs
