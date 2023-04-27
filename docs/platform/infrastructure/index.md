@@ -1,3 +1,16 @@
+# AWS
+
+The LITTIL platform allows deployment into the AWS public cloud platform.
+
+For setup of AWS and cloudformation templates, visit the
+[infrastructure repository](https://github.com/Devoxx4Kids-NPO/littil-infrastructure)
+
+For the infrastructure definitions for each application,
+visit the [front-end](https://github.com/Devoxx4Kids-NPO/littil-frontend/tree/main/infrastructure)
+and [back-end](https://github.com/Devoxx4Kids-NPO/littil-backend/tree/main/infrastructure)
+repositories.
+
+## AWS Infrastructure components
 ![Initial draft of infrastructure on AWS cloud](littil-aws-infra-v0.1.png "Initial draft of infrastructure on AWS cloud")
 
 Note: Diagram contains draw.io source (load diagram from this PNG image)
