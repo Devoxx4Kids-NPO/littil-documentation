@@ -1,8 +1,8 @@
 # Backlog
 
-WIP
+~~[Trello kanban board](https://trello.com/b/Sk4Tljgm/kanban-board)~~
 
-[Trello kanban board](https://trello.com/b/Sk4Tljgm/kanban-board)
+The Trello backlog is not being maintained. The backlog was moved to Jira. Check out Slack for info.
 
 # Communication
 
