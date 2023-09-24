@@ -1,8 +1,6 @@
 # Backlog
 
-~~[Trello kanban board](https://trello.com/b/Sk4Tljgm/kanban-board)~~
-
-The Trello backlog is not being maintained. The backlog was moved to Jira. Check out Slack for info.
+Our backlog is managed on our [Atlassian Jira](https://devoxx4kids.atlassian.net)
 
 # Communication
 
