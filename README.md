@@ -1,9 +1,9 @@
 # LITTIL
 
-If you are looking for documentation of our LITTIL platform, then please visit our [documentation site](https://devoxx4kids-npo.github.io/littil-documentation/). If you have run into a problem on our LITTIL platform, please submit an issue in oder for our contributers can have a look.
-If you are interested in contributing to our documentation then please read the instructions below and have a look at how you can contribute.
+If you are looking for documentation of our LITTIL platform, then please visit our [documentation site](https://devoxx4kids-npo.github.io/littil-documentation/). If you have run into a problem on our LITTIL platform, please submit an issue on [GitHub](https://github.com/Devoxx4Kids-NPO/littil-documentation) in order for our contributers can have a look.
 
 ## Documentation site
+If you are interested in contributing to our documentation then please read the instructions below and have a look at how you can contribute. 
 Our documentation, which is published via GitHub pages, is generated with [MkDocs (with a custom material theme)](https://squidfunk.github.io/mkdocs-material/).
 You can find instructions below about writing documentation, previewing and building the documentation.
 
