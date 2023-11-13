@@ -35,7 +35,7 @@ $ npm install
 1. To get the OpenAPI specs locally, run:
 
 ```shell
-$ npm openapi
+$ npm run openapi
 ```
 
 1. Now you are ready to start the application, run:
