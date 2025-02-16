@@ -1,8 +1,6 @@
 # Backlog
 
-WIP
-
-[Trello kanban board](https://trello.com/b/Sk4Tljgm/kanban-board)
+Our backlog is managed on our [Atlassian Jira](https://devoxx4kids.atlassian.net)
 
 # Communication
 

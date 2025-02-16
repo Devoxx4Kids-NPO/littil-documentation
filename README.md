@@ -1,9 +1,9 @@
 # LITTIL
 
-If you are looking for documentation of our LITTIL platform, then please visit our [documentation site](https://devoxx4kids-npo.github.io/littil-documentation/).
-If not and you are interested in contributing to our documentation then please read the instructions below.
+If you are looking for documentation of our LITTIL platform, then please visit our [documentation site](https://devoxx4kids-npo.github.io/littil-documentation/). If you have run into a problem on our LITTIL platform, please submit an issue on [GitHub](https://github.com/Devoxx4Kids-NPO/littil-documentation/issues) in order for our contributers can have a look.
 
 ## Documentation site
+If you are interested in contributing to our documentation then please read the instructions below and have a look at how you can contribute. 
 Our documentation, which is published via GitHub pages, is generated with [MkDocs (with a custom material theme)](https://squidfunk.github.io/mkdocs-material/).
 You can find instructions below about writing documentation, previewing and building the documentation.
 
@@ -26,6 +26,11 @@ the documentation. Run the following command `in the root of the project` to pre
 
 ```shell
 $ docker run --rm -it -p 8000:8000 -v ${PWD}:/docs -e ENABLE_GIT_INTEGRATION=False ghcr.io/devoxx4kids-npo/littil-documentation:latest
+```
+
+or if you want to use docker compose
+```shell
+$ docker compose up
 ```
 
 The documentation site should be available at `http://localhost:8000`.

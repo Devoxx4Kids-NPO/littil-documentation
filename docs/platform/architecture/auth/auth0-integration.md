@@ -26,6 +26,12 @@ type of an account.
 
 ![Registration sequence diagram](../../../diagrams/out/registration-process-sequence-diagram.svg)
 
+### Create account option disabled
+
+A user is created by the backend of the LITTIL platform.
+The option to prevent users creating an account directly in auth0 is disabled.
+The option `Disable Sign Ups` is activated in the menu `Authentication - Database`.
+
 ## Clients
 
 We have multiple clients registered in Auth0 for different reasons. Each of them described below with their important

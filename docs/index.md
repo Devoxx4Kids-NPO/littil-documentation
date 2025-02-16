@@ -1,32 +1,13 @@
----
-hide:
-  - navigation
-  - toc
----
-
 # Homepage
-This is the root of the documentation site of the Littil platform. It supports Markdown and PlantUML. 
 
-For example: 
+Welcome to the documentation site of the [https://littil.org] platform.
 
-```plantuml
-@startuml
-  Goofy ->  MickeyMouse: calls
-  Goofy <-- MickeyMouse: responds
-@enduml
-```
+## How to contribute
 
-Will generate:
+* If you encounter bugs you can report them on our [GitHub](https://github.com/Devoxx4Kids-NPO/littil-documentation) repository (extra points for a Pull Request)
+* We communicate on [Slack channel nl_littil_dev](https://app.slack.com/client/T0DCK75U0/C02TS8QTPM0)
+* We manage our backlog on  [Atlassian Jira](https://devoxx4kids.atlassian.net)
+* This documentation site supports [Markdown](help.md) and [PlantUML](help.md) and can be updated via [GitHub](https://github.com/Devoxx4Kids-NPO/littil-documentation)
 
-![Example diagram](diagrams/out/example.svg) 
 
-You can also include files using:
 
-~~~{.Dockerfile linenums=1 title="Dockerfile"}
-{% include "../Dockerfile" %}
-~~~
-
-Or even include files from a git repository:
-~~~{.gherkin linenums=1 title="Feature file fetched from a repository"}
-{{ gitsnippet('Devoxx4Kids-NPO/littil-e2e', 'src/test/resources/features/teacher_registration.feature') }}
-~~~
