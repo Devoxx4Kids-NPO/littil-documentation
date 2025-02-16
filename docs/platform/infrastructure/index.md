@@ -42,6 +42,13 @@ AWS Feedback 2022-09-13:
 Decisions on start of implementation front-end infra 2022-09-24
 - Use Cloudfront & S3 for front-end. Amplify would use those anyway, and could be useful. But for now it adds unnecessary complexity.
 
+### Cost saving version
+
+Since July 2024, costs have been reduced by using a version of the infra architecture that uses an EC2 machine instead of a ECS task. It requires manual deployments, but cuts cost by ~60%.
+
+![EC2 version of infrastructure on AWS cloud](littil-aws-infra-vEC2.drawio.png "Initial draft of infrastructure on AWS cloud")
+
+More specific information will be available in the LITTIL-backend repository, which is where the infra design is implemented.
 
 ## Infra as code (IaC)
 
