@@ -16,4 +16,4 @@ jobs:
         run: docker build . -f Dockerfile -t local
 
       - name: Generate en publish documentation
-        run: docker run -v ${PWD}:/docs -e GITHUB_TOKEN=${GITHUB_TOKEN} --entrypoint "/bin/sh" local -c "/usr/bin/git config --global --add safe.directory /docs && mkdocs gh-deploy --force"
+        run: docker run -v ${PWD}:/docs -e GITHUB_TOKEN="" --entrypoint "/bin/sh" local -c "/usr/bin/git config --global --add safe.directory /docs && mkdocs gh-deploy --force"
