@@ -1,10 +1,54 @@
-## Getting started with LITTIL infrastructure
+# AWS
 
+The LITTIL platform allows deployment into the AWS public cloud platform.
 
+For setup of AWS and cloudformation templates, visit the
+[infrastructure repository](https://github.com/Devoxx4Kids-NPO/littil-infrastructure)
 
-### Definition of Done (DoD)
+For the infrastructure definitions for each application,
+visit the [front-end](https://github.com/Devoxx4Kids-NPO/littil-frontend/tree/main/infrastructure)
+and [back-end](https://github.com/Devoxx4Kids-NPO/littil-backend/tree/main/infrastructure)
+repositories.
 
+## Cloud architecture
+![Initial draft of infrastructure on AWS cloud](littil-aws-infra-v0.1.png "Initial draft of infrastructure on AWS cloud")
 
+Note: Diagram contains draw.io source (load diagram from this PNG image)
+
+Note: This picture shows the infrastructure as designed (intended). Actual infrastructure may deviate (see TODO note)
+
+TODO: Since the back and front-end are separate applications, deployed separately, this diagram should be split and put with the respective infra code it describes.
+
+AWS Feedback 2022-09-13:
+- Use Amplify for front-end. Hosting & Build in AWS in a cost-effective way
+  - Pay per build-minute & gigabyte storage & gigabyte traffic
+  - Free tier eligible
+- ECR (Elastic Container Registry) for image storage
+  - Pay for storage, use expiry date on images to save on storage
+  - Use ECR vulnerability scanning (setting in ECR, functionality from Security Hub)
+- Load balancer for back-end ingress
+  - Only way to get traffic dynamically routed. Elastic IP is free of charge, but requires manual DNS updates to internal container IP
+- ECS (Elastic Container Service) for back-end runtime
+  - ARM or x86, ARM is cheaper (native compilation with Quarkus?)
+  - Fargate
+- Networking
+  - Private subnet, VPC with 2 AZ (Availability Zones)
+  - NAT Gateway for egress (to retrieve images from ECR)
+- CDK
+  - Use aws_ecs_patterns in TypeScript CDK, network details will be abstracted away
+- RDS (Relational Database Service) for persistence
+  - EC2 instance T4G-micro, 2vCPU, 1GB, good for ~89 DB connections
+
+Decisions on start of implementation front-end infra 2022-09-24
+- Use Cloudfront & S3 for front-end. Amplify would use those anyway, and could be useful. But for now it adds unnecessary complexity.
+
+### Cost saving version
+
+Since July 2024, costs have been reduced by using a version of the infra architecture that uses an EC2 machine instead of a ECS task. It requires manual deployments, but cuts cost by ~60%.
+
+![EC2 version of infrastructure on AWS cloud](littil-aws-infra-vEC2.drawio.png "Initial draft of infrastructure on AWS cloud")
+
+More specific information will be available in the LITTIL-backend repository, which is where the infra design is implemented.
 
 ## Infra as code (IaC)
 
@@ -36,36 +80,3 @@ LITTIL infrastructure is currently made up out of three pieces:
 - Front-end infrastructure: located in the [infrastructure folder in the littil-frontend repository](https://github.com/Devoxx4Kids-NPO/littil-frontend/tree/main/infrastructure)
 
 The cloud foundation consists of procedures and code for bootstrapping AWS CDK and setting up a link with Github pipelines. With this foundation in place, applications can be deployed, as is done from the application specific repositories.
-
-## Cloud architecture
-
-![Initial draft of infrastructure on AWS cloud](littil-aws-infra-v0.1.png "Initial draft of infrastructure on AWS cloud")
-
-Note: Diagram contains draw.io source (load diagram from this PNG image)
-
-Note: This picture shows the infrastructure as designed (intended). Actual infrastructure may deviate (see TODO note)
-
-TODO: Since the back and front-end are separate applications, deployed separately, this diagram should be split and put with the respective infra code it describes.
-
-AWS Feedback 2022-09-13:
-- Use Amplify for front-end. Hosting & Build in AWS in a cost-effective way
-  - Pay per build-minute & gigabyte storage & gigabyte traffic
-  - Free tier eligible
-- ECR (Elastic Container Registry) for image storage
-  - Pay for storage, use expiry date on images to save on storage
-  - Use ECR vulnerability scanning (setting in ECR, functionality from Security Hub)
-- Load balancer for back-end ingress
-  - Only way to get traffic dynamically routed. Elastic IP is free of charge, but requires manual DNS updates to internal container IP
-- ECS (Elastic Container Service) for back-end runtime
-  - ARM or x86, ARM is cheaper (native compilation with Quarkus?)
-  - Fargate
-- Networking
-  - Private subnet, VPC with 2 AZ (Availability Zones)
-  - NAT Gateway for egress (to retrieve images from ECR)
-- CDK
-  - Use aws_ecs_patterns in TypeScript CDK, network details will be abstracted away
-- RDS (Relational Database Service) for persistence
-  - EC2 instance T4G-micro, 2vCPU, 1GB, good for ~89 DB connections
-
-Decisions on start of implementation front-end infra 2022-09-24
-- Use Cloudfront & S3 for front-end. Amplify would use those anyway, and could be useful. But for now it adds unnecessary complexity.
