@@ -132,3 +132,25 @@ exports.onExecutePostLogin = async (event, api) => {
 ```
 
 After creating the custom-action, make sure to drag the custom-action into the login flow.
+
+
+## Auth0 roles
+
+By default, the roles in auth0 are not forwarded with the ID and accessToken. 
+A `custom-action` with the name `Add Roles` is added to the login-flow to add the roles.
+
+The custom-action can be found below `Actions > library > Custom actions`
+
+We use the following code:
+
+``` javascript
+exports.onExecutePostLogin = async (event, api) => {
+  const namespace = 'https://littil.org';
+  if (event.authorization) {
+    api.idToken.setCustomClaim(`${namespace}/roles`, event.authorization.roles);
+    api.accessToken.setCustomClaim(`${namespace}/roles`, event.authorization.roles);
+  }
+};
+```
+
+After creating the custom-action, make sure to drag the custom-action into the login flow.
