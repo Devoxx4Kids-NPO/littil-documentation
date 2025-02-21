@@ -2,10 +2,7 @@ name: generate-and-push-documentation
 on:
   push:
     branches:
-      - 'test*'
-    paths:
-      - docs/**
-      - mkdocs.yml
+      - test-1
 jobs:
   deploy:
     runs-on: ubuntu-latest
