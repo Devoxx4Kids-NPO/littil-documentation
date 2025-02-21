@@ -1,8 +1,6 @@
 name: generate-and-push-documentation
 on:
   push:
-    branches:
-      - test-1
     paths:
       - docs/**
       - mkdocs.yml
