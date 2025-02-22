@@ -1,0 +1,1464 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation of the Littil platform">
+      
+      
+      
+        <link rel="canonical" href="https://devoxx4kids-npo.github.io/littil-documentation/platform/local-development/set-up-frontend-environment/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../set-up-backend-environment/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>Running frontend locally - Littil documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#setting-up-your-local-develop-environment" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Littil documentation" class="md-header__button md-logo" aria-label="Littil documentation" data-md-component="logo">
+      
+  
+  <?xml version="1.0" encoding="UTF-8"?>
+<svg width="67.0874576px" height="89.3200727px" viewBox="0 0 67.0874576 89.3200727" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Rocket</title>
+    <defs>
+        <linearGradient x1="58.270498%" y1="4.63520102%" x2="43.9184885%" y2="91.0025789%" id="linearGradient-1">
+            <stop stop-color="#4A59A4" offset="0%"></stop>
+            <stop stop-color="#3EBCED" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Rocket" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M27.0499912,37.8645786 L42.3299912,41.2845786 L46.8699912,56.7945786 L48.0499912,58.6645786 C50.0216476,61.7656574 49.1060698,65.8779218 46.0049911,67.8495783 C42.9039123,69.8212348 38.7916479,68.9056572 36.8199912,65.8045786 L35.6499912,63.9345786 L23.6499912,53.1845786 L27.0499912,37.8645786 Z M50.4199912,53.4045786 C49.7437065,53.1097388 49.2570156,52.4995033 49.1199912,51.7745786 C48.3599912,47.7145786 46.0299912,41.4445786 42.8999912,35.0245786 C42.579005,34.3700444 42.6014532,33.5993207 42.9599912,32.9645786 C43.484854,32.1608211 44.4020676,31.7022143 45.3599912,31.7645786 C45.8199912,31.7645786 56.6699912,30.7645786 64.3599912,43.0445786 C70.1999912,52.3145786 64.8799912,55.8445786 64.6499912,55.9845786 C63.6287955,56.6089899 62.2957746,56.3023951 61.6499912,55.2945786 C59.6851645,52.1955651 55.5815014,51.2736953 52.4799912,53.2345786 C51.864941,53.6321147 51.0918898,53.6959102 50.4199912,53.4045786 L50.4199912,53.4045786 Z M15.8399912,50.1845786 C16.5646971,50.1370737 17.2668155,50.4470515 17.7199912,51.0145786 C22.3199912,56.7945786 26.8399912,61.4645786 30.1199912,63.8145786 C30.7207613,64.2452504 31.0690806,64.9456344 31.0499912,65.6845786 C31.029957,66.4170908 30.6575456,67.0948796 30.0499912,67.5045786 C26.9498095,69.4771779 26.0249244,73.5833107 27.9799912,76.6945786 C28.6284627,77.734375 28.3210227,79.10226 27.2899912,79.7645786 C27.0599912,79.9045786 21.6099912,83.2245786 15.7599912,73.9445786 C8.01999124,61.6745786 13.5199912,52.2445786 13.7599912,51.8545786 C14.1090672,50.9691431 14.9000447,50.3340795 15.8399912,50.1845786 L15.8399912,50.1845786 Z M2.50999124,1.43457857 C2.8653348,0.52077224 3.77150789,-0.0577221901 4.74999124,0.00457857082 C11.257311,0.816152329 17.5424588,2.89534716 23.2499912,6.12457857 L14.1299912,17.1245786 L0.129991242,20.7745786 C-0.340258713,14.2345223 0.468132785,7.66549223 2.50999124,1.43457857 L2.50999124,1.43457857 Z M27.4399912,21.8545786 C29.3571228,24.8828322 29.2609681,28.7678341 27.1963758,31.6975392 C25.1317835,34.6272442 21.5054719,36.0245095 18.0088277,35.2376215 C14.5121836,34.4507335 11.8340351,31.6347067 11.223526,28.1029944 C10.613017,24.5712821 12.1904159,21.0196207 15.2199912,19.1045786 C19.3591467,16.5204355 24.8068822,17.7463989 27.4399912,21.8545786 L27.4399912,21.8545786 Z" id="Shape" fill="#F9B233" fill-rule="nonzero"></path>
+        <path d="M23.2499912,6.12457857 C30.7215825,10.2291137 37.0181038,16.1779321 41.5399912,23.4045786 C43.2899912,26.1845786 45.1399912,29.5345786 46.8799912,33.0445786 C50.1699912,39.8345786 52.6499912,46.5145786 53.4499912,50.9445786 C53.6368302,51.8428229 53.2358407,52.761089 52.4499912,53.2345786 L46.8399912,56.8045786 L38.5599912,43.6745786 C36.5299059,40.7241902 32.5300595,39.9074858 29.5058493,41.8258682 C26.4816392,43.7442506 25.5159931,47.7107737 27.3199912,50.8045786 L35.6499912,63.9345786 L30.0399912,67.5045786 C29.2831773,67.9877512 28.3081052,67.9600052 27.5799912,67.4345786 C23.9599912,64.8445786 19.0999912,59.8945786 14.2499912,53.7745786 C11.9688973,50.8847691 9.83614637,47.8808946 7.85999124,44.7745786 C3.27049382,37.5685872 0.608787779,29.3045581 0.129991242,20.7745786 L23.2499912,6.12457857 Z M12.4699912,31.3545786 C15.0938976,35.4793789 20.5628754,36.6994782 24.6911584,34.0810547 C28.8194414,31.4626312 30.0468061,25.9952793 27.4338701,21.8635209 C24.820934,17.7317625 19.3552177,16.4971346 15.2199912,19.1045786 C13.220756,20.3556584 11.805085,22.3545244 11.2885007,24.6556725 C10.7719165,26.9568207 11.1973536,29.3689967 12.4699912,31.3545786 L12.4699912,31.3545786 Z M48.3199912,71.6245786 C48.8139026,71.3077039 49.4139403,71.2012849 49.9866981,71.3289817 C50.5594559,71.4566786 51.0574607,71.807907 51.3699912,72.3045786 L60.0399912,86.0145786 C60.6158186,87.0420889 60.2889456,88.3404472 59.2952303,88.9728114 C58.3015151,89.6051757 56.9869149,89.3513913 56.2999912,88.3945786 L47.6499912,74.6845786 C46.9929382,73.6540452 47.2924213,72.2862566 48.3199912,71.6245786 L48.3199912,71.6245786 Z M43.8799912,77.0645786 L46.2499912,80.8145786 C46.8258186,81.8420889 46.4989456,83.1404472 45.5052303,83.7728114 C44.5115151,84.4051757 43.1969149,84.1513913 42.5099912,83.1945786 L40.1399912,79.4445786 C39.4857222,78.4057737 39.794144,77.0335202 40.8299912,76.3745786 C41.3251209,76.0586066 41.9260424,75.9537453 42.4989253,76.0833483 C43.0718082,76.2129513 43.569079,76.5662561 43.8799912,77.0645786 Z M57.4799912,73.6845786 L55.1199912,69.9345786 C54.8030484,69.4363376 54.6976672,68.8323547 54.8271564,68.2562216 C54.9566456,67.6800884 55.310334,67.179284 55.8099912,66.8645786 C56.3051209,66.5486066 56.9060424,66.4437453 57.4789253,66.5733483 C58.0518082,66.7029513 58.549079,67.0562561 58.8599912,67.5545786 L61.2299912,71.3045786 C61.88721,72.3401125 61.580525,73.7123596 60.5449912,74.3695784 C59.5094573,75.0267973 58.1372101,74.7201124 57.4799912,73.6845786 L57.4799912,73.6845786 Z" id="Shape" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
+    </g>
+</svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Littil documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Running frontend locally
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Devoxx4Kids-NPO/littil-documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Homepage
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../about/" class="md-tabs__link">
+          
+  
+    
+  
+  Foundation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+    
+  
+  Platform
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../teaching_materials/" class="md-tabs__link">
+          
+  
+    
+  
+  Teacher materials
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Littil documentation" class="md-nav__button md-logo" aria-label="Littil documentation" data-md-component="logo">
+      
+  
+  <?xml version="1.0" encoding="UTF-8"?>
+<svg width="67.0874576px" height="89.3200727px" viewBox="0 0 67.0874576 89.3200727" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Rocket</title>
+    <defs>
+        <linearGradient x1="58.270498%" y1="4.63520102%" x2="43.9184885%" y2="91.0025789%" id="linearGradient-1">
+            <stop stop-color="#4A59A4" offset="0%"></stop>
+            <stop stop-color="#3EBCED" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Rocket" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M27.0499912,37.8645786 L42.3299912,41.2845786 L46.8699912,56.7945786 L48.0499912,58.6645786 C50.0216476,61.7656574 49.1060698,65.8779218 46.0049911,67.8495783 C42.9039123,69.8212348 38.7916479,68.9056572 36.8199912,65.8045786 L35.6499912,63.9345786 L23.6499912,53.1845786 L27.0499912,37.8645786 Z M50.4199912,53.4045786 C49.7437065,53.1097388 49.2570156,52.4995033 49.1199912,51.7745786 C48.3599912,47.7145786 46.0299912,41.4445786 42.8999912,35.0245786 C42.579005,34.3700444 42.6014532,33.5993207 42.9599912,32.9645786 C43.484854,32.1608211 44.4020676,31.7022143 45.3599912,31.7645786 C45.8199912,31.7645786 56.6699912,30.7645786 64.3599912,43.0445786 C70.1999912,52.3145786 64.8799912,55.8445786 64.6499912,55.9845786 C63.6287955,56.6089899 62.2957746,56.3023951 61.6499912,55.2945786 C59.6851645,52.1955651 55.5815014,51.2736953 52.4799912,53.2345786 C51.864941,53.6321147 51.0918898,53.6959102 50.4199912,53.4045786 L50.4199912,53.4045786 Z M15.8399912,50.1845786 C16.5646971,50.1370737 17.2668155,50.4470515 17.7199912,51.0145786 C22.3199912,56.7945786 26.8399912,61.4645786 30.1199912,63.8145786 C30.7207613,64.2452504 31.0690806,64.9456344 31.0499912,65.6845786 C31.029957,66.4170908 30.6575456,67.0948796 30.0499912,67.5045786 C26.9498095,69.4771779 26.0249244,73.5833107 27.9799912,76.6945786 C28.6284627,77.734375 28.3210227,79.10226 27.2899912,79.7645786 C27.0599912,79.9045786 21.6099912,83.2245786 15.7599912,73.9445786 C8.01999124,61.6745786 13.5199912,52.2445786 13.7599912,51.8545786 C14.1090672,50.9691431 14.9000447,50.3340795 15.8399912,50.1845786 L15.8399912,50.1845786 Z M2.50999124,1.43457857 C2.8653348,0.52077224 3.77150789,-0.0577221901 4.74999124,0.00457857082 C11.257311,0.816152329 17.5424588,2.89534716 23.2499912,6.12457857 L14.1299912,17.1245786 L0.129991242,20.7745786 C-0.340258713,14.2345223 0.468132785,7.66549223 2.50999124,1.43457857 L2.50999124,1.43457857 Z M27.4399912,21.8545786 C29.3571228,24.8828322 29.2609681,28.7678341 27.1963758,31.6975392 C25.1317835,34.6272442 21.5054719,36.0245095 18.0088277,35.2376215 C14.5121836,34.4507335 11.8340351,31.6347067 11.223526,28.1029944 C10.613017,24.5712821 12.1904159,21.0196207 15.2199912,19.1045786 C19.3591467,16.5204355 24.8068822,17.7463989 27.4399912,21.8545786 L27.4399912,21.8545786 Z" id="Shape" fill="#F9B233" fill-rule="nonzero"></path>
+        <path d="M23.2499912,6.12457857 C30.7215825,10.2291137 37.0181038,16.1779321 41.5399912,23.4045786 C43.2899912,26.1845786 45.1399912,29.5345786 46.8799912,33.0445786 C50.1699912,39.8345786 52.6499912,46.5145786 53.4499912,50.9445786 C53.6368302,51.8428229 53.2358407,52.761089 52.4499912,53.2345786 L46.8399912,56.8045786 L38.5599912,43.6745786 C36.5299059,40.7241902 32.5300595,39.9074858 29.5058493,41.8258682 C26.4816392,43.7442506 25.5159931,47.7107737 27.3199912,50.8045786 L35.6499912,63.9345786 L30.0399912,67.5045786 C29.2831773,67.9877512 28.3081052,67.9600052 27.5799912,67.4345786 C23.9599912,64.8445786 19.0999912,59.8945786 14.2499912,53.7745786 C11.9688973,50.8847691 9.83614637,47.8808946 7.85999124,44.7745786 C3.27049382,37.5685872 0.608787779,29.3045581 0.129991242,20.7745786 L23.2499912,6.12457857 Z M12.4699912,31.3545786 C15.0938976,35.4793789 20.5628754,36.6994782 24.6911584,34.0810547 C28.8194414,31.4626312 30.0468061,25.9952793 27.4338701,21.8635209 C24.820934,17.7317625 19.3552177,16.4971346 15.2199912,19.1045786 C13.220756,20.3556584 11.805085,22.3545244 11.2885007,24.6556725 C10.7719165,26.9568207 11.1973536,29.3689967 12.4699912,31.3545786 L12.4699912,31.3545786 Z M48.3199912,71.6245786 C48.8139026,71.3077039 49.4139403,71.2012849 49.9866981,71.3289817 C50.5594559,71.4566786 51.0574607,71.807907 51.3699912,72.3045786 L60.0399912,86.0145786 C60.6158186,87.0420889 60.2889456,88.3404472 59.2952303,88.9728114 C58.3015151,89.6051757 56.9869149,89.3513913 56.2999912,88.3945786 L47.6499912,74.6845786 C46.9929382,73.6540452 47.2924213,72.2862566 48.3199912,71.6245786 L48.3199912,71.6245786 Z M43.8799912,77.0645786 L46.2499912,80.8145786 C46.8258186,81.8420889 46.4989456,83.1404472 45.5052303,83.7728114 C44.5115151,84.4051757 43.1969149,84.1513913 42.5099912,83.1945786 L40.1399912,79.4445786 C39.4857222,78.4057737 39.794144,77.0335202 40.8299912,76.3745786 C41.3251209,76.0586066 41.9260424,75.9537453 42.4989253,76.0833483 C43.0718082,76.2129513 43.569079,76.5662561 43.8799912,77.0645786 Z M57.4799912,73.6845786 L55.1199912,69.9345786 C54.8030484,69.4363376 54.6976672,68.8323547 54.8271564,68.2562216 C54.9566456,67.6800884 55.310334,67.179284 55.8099912,66.8645786 C56.3051209,66.5486066 56.9060424,66.4437453 57.4789253,66.5733483 C58.0518082,66.7029513 58.549079,67.0562561 58.8599912,67.5545786 L61.2299912,71.3045786 C61.88721,72.3401125 61.580525,73.7123596 60.5449912,74.3695784 C59.5094573,75.0267973 58.1372101,74.7201124 57.4799912,73.6845786 L57.4799912,73.6845786 Z" id="Shape" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
+    </g>
+</svg>
+
+    </a>
+    Littil documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Devoxx4Kids-NPO/littil-documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Homepage
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../about/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Foundation
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Foundation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Contribute
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Contribute
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/contribute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Backlog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Platform
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Platform
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../architecture/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Architecture
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../architecture/auth/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Authentication/authorization
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Authentication/authorization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/auth/auth0-integration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auth0 Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../features/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Features
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/teacher/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Teacher
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/school/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    School
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/match-making/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Match making
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Infrastructure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Development
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Running frontend locally
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Running frontend locally
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nodejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nodejs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nodejs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows &amp; MacOS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../set-up-backend-environment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Running backend locally
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../teaching_materials/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Teacher materials
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Teacher materials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nodejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nodejs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nodejs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows &amp; MacOS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+                  
+
+
+  
+  
+
+
+<h1 id="setting-up-your-local-develop-environment">Setting up your local develop environment</h1>
+<p>If you want to contribute to the LITTIL website you need to set up a development environment. The website static environment based on <a href="https://angular.io">Angular.io</a>.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>NodeJS LTS &gt;= 16</li>
+<li>NPM 8</li>
+</ul>
+<h3 id="nodejs">Nodejs</h3>
+<p>Nodejs is used to generate the static files via Angular. The LITTIL website is tested and build on the LTS version of NodeJS 16.
+When installing NodeJS you will get an installation of NPM as well.</p>
+<h4 id="windows-macos">Windows &amp; MacOS</h4>
+<p>To install NodeJS on Windows or MacOS you can simply download it from <a href="https://nodejs.org/en/">the website</a>.</p>
+<h4 id="linux">Linux</h4>
+<p>The easiest way to install NodeJS is by using your package manager. For instructions on your distribution see <a href="https://nodejs.org/en/download/package-manager/">the website as well</a></p>
+<h3 id="installation">Installation</h3>
+<p>To run the Frontend locally, follow these steps:</p>
+<ol>
+<li>Download the repository from [Github|https://github.com/Devoxx4Kids-NPO/littil-frontend]</li>
+<li>Open the repository folder in your IDE ([VSCode download page|https://code.visualstudio.com/download])</li>
+<li>Open a terminal and run:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>npm<span class="w"> </span>install
+</code></pre></div>
+<ol>
+<li>To get the OpenAPI specs locally, run:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>npm<span class="w"> </span>run<span class="w"> </span>openapi
+</code></pre></div>
+<ol>
+<li>Now you are ready to start the application, run:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>npm<span class="w"> </span>start
+</code></pre></div>
+<ol>
+<li>Read the <code>README.md</code> file for more information about the Frontend repository.</li>
+</ol>
+<h1 id="docker">Docker</h1>
+<p>The LITTIL website is a static site that can run on any HTTP webserver. In example, you can use Nginx to serve the static files.
+If you want an image based on this project running in Nginx you can use the following guide:</p>
+<h2 id="prerequisites_1">Prerequisites</h2>
+<ul>
+<li>Docker</li>
+</ul>
+<h2 id="installation-of-docker">Installation of Docker</h2>
+<h4 id="macos-windows">MacOS &amp; Windows</h4>
+<p>The easiest way to install docker on your Windows or MacOS machine is by installing docker-desktop. You can find the
+installation files on <a href="https://www.docker.com/get-started">docker download page</a>.</p>
+<h4 id="linux_1">Linux</h4>
+<p>Please see the following documentation on how to get Docker installed on your preferred Linux distribution:
+<a href="https://docs.docker.com/engine/install/#server">Official Docker Documentation</a>
+locally on your machine.</p>
+<h2 id="building-an-image">Building an image</h2>
+<p>This projects ships 2 docker files. The file <code>./src/docker/Dockerfile.build</code> can be used to build the project within
+a container. This is ideal when you don't have NodeJS installed local on your device.</p>
+<p>You can use <code>./src/docker/Dockerfile.host</code> if you already have build the project local on your device, and you
+want to create an image with this build.</p>
+<p>Use the following command in the root of the project to start building an image and tag it. Feel free to choose a tag of your own.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>docker<span class="w"> </span>build<span class="w"> </span>.<span class="w"> </span>-f<span class="w"> </span>src/docker/Dockerfile.<span class="o">(</span>build<span class="p">|</span>host<span class="o">)</span><span class="w"> </span>-t<span class="w"> </span>littil/littil-org-website:latest
+</code></pre></div>
+<p>After a successful build you can start running the image using Docker via:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>-p<span class="w"> </span><span class="m">8081</span>:80<span class="w"> </span>littil/littil-org-website:latest
+</code></pre></div>
+<p><em>Parameters</em></p>
+<ul>
+<li>You can either use <code>-d</code> instead of <code>-it</code> if you want to start the container in <code>detached mode</code>.</li>
+<li>The container exposes port 80 by default. If your machine is already using this port you can map the
+  container port to another local port on your device using <code>-p</code>. In the example above the mapping is from port 80 to port 8081.</li>
+</ul>
+<p>You can now navigate to <code>http://localhost:8081</code> using your browser. You should see the LITTIL website.</p>
+<h3 id="get-the-id-of-a-container">Get the ID of a container</h3>
+<p>To start, stop or access your container you need its ID. You can find this ID by running:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>docker<span class="w"> </span>ps
+</code></pre></div>
+<p>The correct ID is in column <code>CONTAINER ID</code>.</p>
+<h3 id="access-the-container">Access the container</h3>
+<p>If you need access to the Nginx webserver you can simply gain access with <code>Bash</code> using the <code>CONTAINER ID</code>
+which you can look up as described above.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>&lt;CONTAINER<span class="w"> </span>ID&gt;<span class="w"> </span>/bin/bash
+</code></pre></div>
+<h3 id="stopping-the-container">Stopping the container</h3>
+<p>When you have started your container in <code>detached mode</code> and you want to stop it, you need to do this with the Docker CLI tool.
+First look up the <code>CONTAINER ID</code> and then run:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span>docker<span class="w"> </span>stop<span class="w"> </span>&lt;CONTAINER<span class="w"> </span>ID&gt;
+</code></pre></div>
+<h3 id="remove-the-container">Remove the container</h3>
+<p>If you want to remove the container from your machine you should look up the <code>CONTAINER ID</code> and then run:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>docker<span class="w"> </span>rm<span class="w"> </span>&lt;CONTAINER<span class="w"> </span>ID&gt;
+</code></pre></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 22, 2025</span>
+  </span>
+
+    
+    
+    
+      
+  
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Contributors">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"/></svg>
+      
+    </span>
+    <nav>
+      
+        <a href="mailto:98379322+marcelwildenburg@users.noreply.github.com">MarcelWildenburg</a>
+    </nav>
+  </span>
+
+    
+    
+  </aside>
+
+
+
+
+
+                
+
+
+<div class="md-source-date">
+    <small>
+        Authors: <span class='git-page-authors git-authors'><a href='mailto:98379322+marcelwildenburg@users.noreply.github.com'>MarcelWildenburg</a></span>
+    </small>
+</div>
+
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>
